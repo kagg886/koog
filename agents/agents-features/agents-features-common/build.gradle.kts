@@ -35,6 +35,24 @@ kotlin {
             }
         }
 
+        appleMain {
+            dependencies {
+                api(libs.ktor.client.darwin)
+            }
+        }
+
+        linuxMain {
+            dependencies {
+                api(libs.ktor.client.curl)
+            }
+        }
+
+        mingwMain {
+            dependencies {
+                api(libs.ktor.client.winhttp)
+            }
+        }
+
         jvmMain {
             dependencies {
                 api(libs.ktor.client.cio)
