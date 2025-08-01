@@ -18,45 +18,45 @@ plugins {
 kotlin {
     // Tiers are in accordance with <https://kotlinlang.org/docs/native-target-support.html>
     // Tier 1
-    macosX64()
-    macosArm64()
+//    macosX64()
+//    macosArm64()
     iosSimulatorArm64()
-    iosX64()
+//    iosX64()
 
     // Tier 2
-    linuxX64()
-    linuxArm64()
-    watchosSimulatorArm64()
-    watchosX64()
-    watchosArm32()
-    watchosArm64()
-    tvosSimulatorArm64()
-    tvosX64()
-    tvosArm64()
+//    linuxX64()
+//    linuxArm64()
+//    watchosSimulatorArm64()
+//    watchosX64()
+//    watchosArm32()
+//    watchosArm64()
+//    tvosSimulatorArm64()
+//    tvosX64()
+//    tvosArm64()
     iosArm64()
 
     // Tier 3
-    mingwX64()
-    watchosDeviceArm64()
+//    mingwX64()
+//    watchosDeviceArm64()
 
     // jvm & js
     jvm {
         configureTests()
     }
 
-    js(IR) {
-        browser {
-            binaries.library()
-        }
-
-        configureTests()
-    }
-
-    wasmJs {
-        browser()
-        nodejs()
-        binaries.library()
-    }
+//    js(IR) {
+//        browser {
+//            binaries.library()
+//        }
+//
+//        configureTests()
+//    }
+//
+//    wasmJs {
+//        browser()
+//        nodejs()
+//        binaries.library()
+//    }
 }
 
 configureJvmJarManifest("jvmJar")
