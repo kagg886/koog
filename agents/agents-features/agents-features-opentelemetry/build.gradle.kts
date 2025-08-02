@@ -55,16 +55,17 @@ kotlin {
 val generateProductProperties = tasks.register("generateProductProperties") {
     val outputDir = layout.buildDirectory.dir("generated/resources")
     val propertiesFile = outputDir.get().file("product.properties")
-
     inputs.property("version", rootProjectVersion)
     inputs.property("group", rootProjectGroup)
     outputs.file(propertiesFile)
-
     doLast {
+        val version = inputs.properties["version"] as String
+        val group = inputs.properties["group"] as String
+
         propertiesFile.asFile.parentFile.mkdirs()
         propertiesFile.asFile.writeText("""
-            version=$rootProjectVersion
-            name=$rootProjectGroup
+            version=$version
+            name=$group
         """.trimIndent())
     }
 }
